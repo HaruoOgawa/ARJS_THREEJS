@@ -47,7 +47,7 @@
   };
 
   const arToolkitContext = new THREEx.ArToolkitContext({
-    cameraParametersUrl: 'data/camera_para.dat',
+    cameraParametersUrl: 'data\camera_para.dat',
     detectionMode: 'mono'
   });
 
@@ -57,12 +57,18 @@
 
   const arMarkerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
     type: 'pattern',
-    patternUrl: 'data/patt.hiro',
+    patternUrl: 'data\patt.hiro',
     changeMatrixMode: 'cameraTransformMatrix'
   });
+const geometry=new THREE.PlaneGoemetry(5,20,32);
+  ///////////////
+
+
+  ///////
+
 
   const mesh = new THREE.Mesh(
-    new THREE.CubeGeometry(1, 1, 1),
+    geometry,
     new THREE.MeshNormalMaterial(),
   );
   mesh.position.y = 1.0;
